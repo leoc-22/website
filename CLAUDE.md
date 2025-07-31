@@ -15,13 +15,13 @@ This is a personal blog website built with Astro and TypeScript, optimized for s
 ## Development Workflow
 
 ### Essential Commands
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build the static site for production
-- `npm run preview` - Preview the production build locally
-- `npm run deploy` - Deploy to Cloudflare Pages (requires wrangler auth)
+- `pnpm dev` - Start development server with hot reload
+- `pnpm build` - Build the static site for production
+- `pnpm preview` - Preview the production build locally
+- `pnpm deploy` - Deploy to Cloudflare Pages (requires wrangler auth)
 
 ### Development Process
-1. Always run `npm run build` before deployment to ensure everything compiles correctly
+1. Always run `pnpm build` before deployment to ensure everything compiles correctly
 2. Use TypeScript for all new code - the project has strict type checking enabled
 3. Blog posts are written in Markdown and stored in `src/content/blog/`
 4. The build process generates optimized static files in the `dist/` directory
@@ -54,7 +54,7 @@ heroImage: '/blog-placeholder-1.jpg' # Optional
 
 ### Cloudflare Pages
 - `wrangler.toml` configures deployment to Cloudflare Pages
-- Build command: `npm run build`
+- Build command: `pnpm build`
 - Output directory: `dist/`
 - Site URL: https://website.pages.dev
 

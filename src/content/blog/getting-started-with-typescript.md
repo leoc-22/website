@@ -5,8 +5,6 @@ pubDate: 2024-01-15T00:00:00.000Z
 heroImage: "../../assets/blog-placeholder-1.jpg"
 ---
 
-# Getting Started with TypeScript: A Developer's Journey
-
 TypeScript has fundamentally changed how I approach JavaScript development. What started as skepticism about "just adding types" has evolved into a deep appreciation for the safety, tooling, and developer experience that TypeScript brings to modern web development.
 
 ## Why TypeScript?

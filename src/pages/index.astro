@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Link from '../components/Link.astro';
+import FormattedDate from "../components/FormattedDate.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 
@@ -13,24 +15,74 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Geist Mono', monospace;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        white-space: nowrap;
+      }
+      .blog-link {
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom-color 0.2s ease;
+      }
+      .blog-link:hover {
+        border-bottom-color: currentColor;
+      }
+      .blog-link:visited {
+        color: #8b5cf6;
+      }
+      .blog-date {
+        color: inherit;
+        font-size: 0.85em;
+        margin-left: 1rem;
+        flex-shrink: 0;
+      }
+    </style>
   </head>
   <body>
     <Header />
     <main>
-      <h1>Hi, I'm Leo Cao</h1>
+      <p>leoc-22 v1.2</p>
       <p>
-        Welcome to my personal blog and portfolio. I write about technology, software development, 
-        and share insights from my experiences building web applications and exploring new technologies.
+        software engineer.
       </p>
-      
       <section>
-        <h2>Latest Blog Posts</h2>
-        <ul>
-          {sortedPosts.map((post) => (
-            <li>
-              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+        <ul aria-label="recent blog posts" class="space-y-2">
+          {
+            posts.map((post) => (
+            <li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded space-x-4">
+              <Link href={`/blog/${post.id}`}>{post.data.title}</Link>
+              <div class="text-right">
+                <FormattedDate date={post.data.pubDate} />
+              </div>
             </li>
-          ))}
+            ))
+          }
         </ul>
       </section>
     </main>
