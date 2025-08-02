@@ -18,7 +18,8 @@ This is a personal blog website built with Astro and TypeScript, optimized for s
 - `pnpm dev` - Start development server with hot reload
 - `pnpm build` - Build the static site for production
 - `pnpm preview` - Preview the production build locally
-- `pnpm deploy` - Deploy to Cloudflare Pages (requires wrangler auth)
+- `pnpm deploy` - Deploy to Cloudflare Pages production (requires wrangler auth)
+- `pnpm deploy:dev` - Deploy to Cloudflare Pages development (requires wrangler auth)
 
 ### Development Process
 1. Always run `pnpm build` before deployment to ensure everything compiles correctly
@@ -53,10 +54,19 @@ heroImage: '/blog-placeholder-1.jpg' # Optional
 ## Deployment Configuration
 
 ### Cloudflare Pages
-- `wrangler.toml` configures deployment to Cloudflare Pages
+- `wrangler.toml` configures deployment to Cloudflare Pages with multiple environments
+- Production environment: `website`
+- Development environment: `website-dev`
 - Build command: `pnpm build`
 - Output directory: `dist/`
-- Site URL: https://website.pages.dev
+- Production URL: https://website.pages.dev
+- Development URL: https://website-dev.pages.dev
+
+### GitHub Actions CI/CD
+- `.github/workflows/deploy-production.yml` - Deploys to production on main branch pushes
+- `.github/workflows/deploy-development.yml` - Deploys to development on any branch pushes (except main) and PRs
+- Requires GitHub secret: `CLOUDFLARE_API_TOKEN`
+- Manual deployments require confirmation for both environments
 
 ### Build Process
 1. TypeScript compilation with strict type checking
