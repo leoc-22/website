@@ -99,6 +99,14 @@ In September 2023, we successfully live-streamed on AWS, confirming that the mig
 
 <figure>
 
+[![live stream demo](/live_stream_demo.png)](/live_stream_demo.png)
+
+<figcaption>Telemetry System Live Stream Demo</figcaption>
+
+</figure>
+
+<figure>
+
 [![kobe](/screenshot1.png)](/screenshot1.png)
 
 </figure>
@@ -112,6 +120,14 @@ In September 2023, we successfully live-streamed on AWS, confirming that the mig
 </figure>
 
 During the 2023 Formula SAE-A competition, the Telemetry System played an important role in the endurance race and we won [2nd overall and 1st in Australia](https://www.saea.com.au/results-2023). 
+
+<figure>
+
+[![telem at 2023 comp](/telem_at_2023_comp.JPG)](/telem_at_2023_comp.JPG)
+
+<figcaption>Telemetry System at the 2023 comp</figcaption>
+
+</figure>
 
 <figure>
 

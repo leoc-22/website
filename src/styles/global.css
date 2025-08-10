@@ -105,6 +105,18 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
+figure {
+	margin: 2em 0;
+}
+.prose figure p {
+	margin-bottom: 0em;
+}
+figcaption {
+	font-size: 0.9em;
+	color: rgb(var(--gray));
+	text-align: center;
+	font-style: italic;
+}
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
