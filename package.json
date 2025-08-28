@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "wrangler pages deploy dist --branch main",
-    "deploy:dev": "wrangler pages deploy dist --branch preview",
-    "astro": "astro"
+    "dev": "bunx astro dev",
+    "build": "bunx astro build",
+    "preview": "bunx astro preview",
+    "deploy": "bunx wrangler pages deploy dist --branch main",
+    "deploy:dev": "bunx wrangler pages deploy dist --branch preview",
+    "astro": "bunx astro"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.0",
